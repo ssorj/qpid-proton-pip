@@ -1,0 +1,19 @@
+name: main
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 0 * * 0"
+jobs:
+  main:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+      - run: pip install python-qpid-proton
