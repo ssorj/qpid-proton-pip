@@ -13,6 +13,7 @@ jobs:
         version: [3.7, 3.x]
     runs-on: ${{matrix.os}}
     steps:
+      - run: git config --global core.longpaths true
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
