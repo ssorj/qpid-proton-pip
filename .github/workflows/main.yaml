@@ -21,4 +21,4 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: ${{matrix.version}}
-      - run: pip install python-qpid-proton
+      - run: pip install --pre python-qpid-proton
